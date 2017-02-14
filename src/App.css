@@ -9,16 +9,30 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 100%;
+  padding: 50px;
   color: white;
 }
+
+
 
 .App-intro {
   font-size: large;
 }
 
+.weather-input{
+  color: black;
+}
+
+.movie-input{
+  color: black;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360000deg); }
+}
+
+input:focus, input:active, textarea:focus, textarea:active, button:focus, button:active{
+  outline-style: none;
 }

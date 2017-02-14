@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
+import reduxPromise from 'redux-promise';
 
-const theStore = createStore(reducers);
+// const theStore = createStore(reducers);
+const theStoreWithMiddleware = applyMiddleware(reduxPromise)(createStore)(reducers);
 
 ReactDOM.render(
-	<Provider store={theStore}>
+	<Provider store={theStoreWithMiddleware}>
 		<App />
 	</Provider>,
 	document.getElementById('root')
